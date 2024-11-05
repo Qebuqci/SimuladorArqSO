@@ -1,12 +1,16 @@
-# COMPILAÇÃO
+# PROJETO DE UM SIMULADOR DE ESCALONAMENTO DE PROCESSOS
+
+## COMPILAÇÃO
 
 gcc Processo.c -o processo
 gcc Fila.c -o fila
 
-# EXECUÇÃO
+## EXECUÇÃO
 
 ./fila
 ./processo
 
--- quando a função init_procs_from_stdin() in Processos.c estiver pronta
+-- quando a função init_procs_from_stdin() in Processos.c 
+	 estiver pronta
+
 ./processo < lista_processos.txt 
