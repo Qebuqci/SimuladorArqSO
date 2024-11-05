@@ -1,0 +1,4 @@
+init	0
+top   1
+ls	  5
+firefox	23123
