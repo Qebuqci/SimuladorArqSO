@@ -24,7 +24,7 @@ void free_Processo (Processo *proc);
 /* Imprime informações de um Processo */
 void print_info (Processo *proc);
 
-	// Funções Auxiliares
+// Funções Auxiliares
 
 /* Inicializa uma sequência de processos de um arquivo */
 void init_procs_from_file(char nome_arq_txt[]);

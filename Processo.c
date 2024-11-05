@@ -77,6 +77,8 @@ Processo* init_procs_from_stdin() {
 
 	// for (int i = 0; i < 4; i++) processos[i] = init_Processo()
 
+	// [FINALIZAR] ToDo
+
 	return 0;
 }
 
