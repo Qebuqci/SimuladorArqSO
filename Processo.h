@@ -22,7 +22,7 @@ Processo *init_Processo (int ppid, char nome[]);
 void free_Processo (Processo *proc);
 
 /* Imprime informações de um Processo */
-void print_info (Processo *proc);
+void print_info_process  (Processo *proc);
 
 // Funções Auxiliares
 

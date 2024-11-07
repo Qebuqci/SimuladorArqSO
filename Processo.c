@@ -43,7 +43,7 @@ void free_Processo (Processo *proc) {
 }
 
 /* Imprime informações de um Processo */
-void print_info (Processo *proc) {
+void print_info_process (Processo *proc) {
 	int pid = proc->pid;
 	int ppid = proc->ppid;
 	char *nome = proc->nome;
@@ -82,7 +82,7 @@ Processo* init_procs_from_stdin() {
 	return 0;
 }
 
-
+/*
 int main() {
 
 	Processo *proc = init_Processo(PROC_BOOT_ID, "random");
@@ -92,3 +92,4 @@ int main() {
 	// init_procs_from_stdin();
 	return 0;
 }
+*/

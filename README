@@ -1,16 +1,30 @@
-# PROJETO DE UM SIMULADOR DE ESCALONAMENTO DE PROCESSOS
+# Projeto de um Simulador de Escalonamento de Processos
 
-## COMPILAÇÃO
+>> Arquitetura atual: 3 arquivos
+	Processo.c		 	: 	Gerência Processos na memória
+	Fila.c					: 	Gerencia filas genéricas (i.e, qualquer tipo de dados: ints, char, Processos etc)
+	
+	Escalonador.c		: 	A função é aplicar o algoritmo de escalonamento Robin-Round nos Processos instanciados
+											para fazê-los transistar entre as filas criadas (Ativos, Execução e Bloqueados), 
+											simulando o comportamento de um schedule de um SO.
 
-gcc Processo.c -o processo
-gcc Fila.c -o fila
+>> Compilação
 
-## EXECUÇÃO
+	gcc Processo.c Fila.c Escalonador.c -o escalonador
+	
+>> Execução
 
-./fila
-./processo
+	./escalonador
 
--- quando a função init_procs_from_stdin() in Processos.c 
-	 estiver pronta
+>> Feedback atual do código. Em:
 
-./processo < lista_processos.txt 
+	Escalonador.c	: 	A implementação atual ainda não consta com algoritmo de escalonamento. Ele apenas
+										cria um vetor de processos e insere esses nas filas, testando o comportamento das
+										implementações Processo.c e Fila.c
+
+	Fila.c				: 	Precisa consertar as funções de inserção e remoção quanto a parte da realocação
+										de memória, que ocorre quando uma fila enche.
+
+	Processo.c		: 	A estrutura de Processo, vai mudar de acordo com a necessidade do algoritmo de
+										escalonamento. Isto é, dependendo dos critérios de processo que o algoritmo
+										necessita para escalonar, a estrutura do arquivo Processo.c vai mudar. 

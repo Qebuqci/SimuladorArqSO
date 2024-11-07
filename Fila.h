@@ -4,30 +4,39 @@
 // Estrutura de Fila
 
 typedef struct _fila {
+	char *nome;
 	int size;
-	int pos_livre;
-	void *mem;
+	void **mem;
+	int top; // pos topo da fila
+	int back; // pos final da fila
 } Fila;
 
 // Funções de Fila
 
 /* Inicializa uma fila */
-Fila *init_fila (int size, int pos_livre);
+Fila *init_fila (char *nome, int size);
 
 /* Desaloca uma fila */
 void free_fila(Fila *fila);
 
-/* Insere numa fila */
-void insere_fila (Fila *fila, void *elemento);
+/* Função que checa se a fila está cheia */
+int isFull(Fila* fila);
 
-/* Remove elemento da fila */
-void remove_fila (Fila *fila, void *elemento);
+/* Insere um objeto no final da fila
+	* Se a fila estiver cheia, então dobra de tamanho e insere
+*/
+void insere_fila (Fila *fila, void *obj);
 
-/* Remove elemento atendido da fila - FIFO or LIFO */
-void remove_a_fila (Fila *fila);
+/* Remove um elemento do topo da fila e retorna ele */
+void *remove_fila (Fila *fila, void *obj);
 
-/* Imprime a fila */
-void print_fila(Fila *fila);
+/* Imprime o endereço dos objetos da fila */
+void print_fila_addr(Fila *fila);
 
+/* Dado uma fila de inteiros, imprime-os */
+void print_fila_int(Fila *fl_int);
+
+/* Imprime informações da fila */
+void print_fila_info(Fila *fl);
 
 #endif
